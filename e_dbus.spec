@@ -18,10 +18,8 @@ BuildRequires:	autoconf
 BuildRequires:	automake >= 1.4
 BuildRequires:	dbus-devel >= 0.62
 BuildRequires:	ecore-devel >= %{ecore_ver}
-#BuildRequires:	libjpeg-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-#BuildRequires:	zlib-devel
 Obsoletes:	ecore-dbus
 #Conflicts:	ecore-libs ??
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,8 +37,6 @@ Summary:	Header files for e_dbus library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki e_dbus
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-#Requires:	libjpeg-devel
-#Requires:	zlib-devel
 
 %description devel
 Header files for e_dbus library.
