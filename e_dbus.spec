@@ -2,13 +2,13 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define		ecore_ver	0.9.9
+%define		ecore_ver	0.9.9.043
 
-Summary:	Dbus support Library for enlightenment
-#Summary(pl.UTF-8):
+Summary:	Ecore DBus Library
+Summary(pl.UTF-8):	Biblioteka Ecore DBus
 Name:		e_dbus
 Version:	0.5.0.043
-Release:	0.1
+Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/snapshots/2008-05-19/%{name}-%{version}.tar.bz2
@@ -22,14 +22,17 @@ BuildRequires:	ecore-devel >= %{ecore_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 #BuildRequires:	zlib-devel
+Obsoletes:	ecore-dbus
+#Conflicts:	ecore-libs ??
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %undefine	__cxx
 
 %description
-e_dbus
+Ecore DBus Library.
 
-#% description -l pl.UTF-8
+% description -l pl.UTF-8
+Biblioteka Ecore DBus.
 
 %package devel
 Summary:	Header files for e_dbus library
@@ -84,18 +87,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING COPYING-PLAIN README
-%attr(755,root,root) %{_libdir}/libeet.so.*.*.*
+%doc AUTHORS COPYING ChangeLog NEWS README
+%attr(755,root,root) %{_bindir}/e*
+%attr(755,root,root) %{_libdir}/libe*.so.*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/*.so
-%{_libdir}/libeet.la
-%{_pkgconfigdir}/eet.pc
-%{_includedir}/Eet.h
+%{_libdir}/libe*.la
+%{_pkgconfigdir}/e*.pc
+%{_includedir}/E_*.h
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libeet.a
+%{_libdir}/lib*.a
 %endif
