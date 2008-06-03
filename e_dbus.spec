@@ -4,8 +4,8 @@
 #
 %define		ecore_ver	0.9.9.043
 
-Summary:	Ecore DBus Library
-Summary(pl.UTF-8):	Biblioteka Ecore DBus
+Summary:	EFL wrapper for DBus
+Summary(pl.UTF-8):	Obudowanie EFL dla systemu DBus
 Name:		e_dbus
 Version:	0.5.0.043
 Release:	1
@@ -13,24 +13,23 @@ License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/snapshots/2008-05-19/%{name}-%{version}.tar.bz2
 # Source0-md5:	68a80552d85b800079387e1008166db4
-URL:		http://enlightenment.org/p.php?p=about/libs/eet
-BuildRequires:	autoconf
-BuildRequires:	automake >= 1.4
+URL:		http://enlightenment.org/p.php?p=about/efl
+BuildRequires:	autoconf >= 2.52
+BuildRequires:	automake >= 1.6
 BuildRequires:	dbus-devel >= 0.62
 BuildRequires:	ecore-devel >= %{ecore_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 Obsoletes:	ecore-dbus
-#Conflicts:	ecore-libs ??
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %undefine	__cxx
 
 %description
-Ecore DBus Library.
+EFL wrapper for DBus.
 
-% description -l pl.UTF-8
-Biblioteka Ecore DBus.
+%description -l pl.UTF-8
+Obudowanie EFL dla systemu DBus.
 
 %package devel
 Summary:	Header files for e_dbus library
@@ -45,8 +44,8 @@ Header files for e_dbus library.
 Pliki nagłówkowe biblioteki e_dbus.
 
 %package static
-Summary:	Static Eet library
-Summary(pl.UTF-8):	Statyczna biblioteka Eet
+Summary:	Static e_dbus library
+Summary(pl.UTF-8):	Statyczna biblioteka e_dbus
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -83,19 +82,48 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/e*
-%attr(755,root,root) %{_libdir}/libe*.so.*
+%doc AUTHORS COPYING README
+%attr(755,root,root) %{_bindir}/e-notify-send
+%attr(755,root,root) %{_bindir}/e_dbus_hal
+%attr(755,root,root) %{_bindir}/e_dbus_nm
+%attr(755,root,root) %{_bindir}/e_dbus_notification_daemon
+%attr(755,root,root) %{_bindir}/e_dbus_notify
+%attr(755,root,root) %{_bindir}/e_dbus_test
+%attr(755,root,root) %{_bindir}/e_dbus_test_client
+%attr(755,root,root) %{_libdir}/libedbus.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libedbus.so.0
+%attr(755,root,root) %{_libdir}/libehal.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libehal.so.0
+%attr(755,root,root) %{_libdir}/libenm.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libenm.so.0
+%attr(755,root,root) %{_libdir}/libenotify.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libenotify.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so
-%{_libdir}/libe*.la
-%{_pkgconfigdir}/e*.pc
-%{_includedir}/E_*.h
+%attr(755,root,root) %{_libdir}/libedbus.so
+%attr(755,root,root) %{_libdir}/libehal.so
+%attr(755,root,root) %{_libdir}/libenm.so
+%attr(755,root,root) %{_libdir}/libenotify.so
+%{_libdir}/libedbus.la
+%{_libdir}/libehal.la
+%{_libdir}/libenm.la
+%{_libdir}/libenotify.la
+%{_includedir}/E_DBus.h
+%{_includedir}/E_Hal.h
+%{_includedir}/E_Nm.h
+%{_includedir}/E_Notification_Daemon.h
+%{_includedir}/E_Notify.h
+%{_pkgconfigdir}/edbus.pc
+%{_pkgconfigdir}/ehal.pc
+%{_pkgconfigdir}/enm.pc
+%{_pkgconfigdir}/enotify.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libedbus.a
+%{_libdir}/libehal.a
+%{_libdir}/libenm.a
+%{_libdir}/libenotify.a
 %endif
