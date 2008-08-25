@@ -2,17 +2,18 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define		ecore_ver	0.9.9.043
+%define		_snap	20080813
+%define		ecore_ver	0.9.9.044
 
 Summary:	EFL wrapper for DBus
 Summary(pl.UTF-8):	Obudowanie EFL dla systemu DBus
 Name:		e_dbus
-Version:	0.5.0.043
-Release:	1
+Version:	0.5.0.044
+Release:	0.%{_snap}.1
 License:	BSD
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/2008-05-19/%{name}-%{version}.tar.bz2
-# Source0-md5:	68a80552d85b800079387e1008166db4
+Source0:	%{name}-%{version}-%{_snap}.tar.bz2
+# Source0-md5:	0032035e32600672febe16d000b4e2ca
 URL:		http://enlightenment.org/p.php?p=about/efl
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -56,7 +57,7 @@ Static e_dbus library.
 Statyczna biblioteka e_dbus.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_snap}
 
 %build
 %{__libtoolize}
