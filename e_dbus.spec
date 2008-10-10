@@ -56,7 +56,7 @@ Static e_dbus library.
 Statyczna biblioteka e_dbus.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %{__libtoolize}
