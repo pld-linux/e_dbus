@@ -3,7 +3,6 @@
 %bcond_without	static_libs	# don't build static library
 #
 %define		ecore_ver	0.9.9.49898
-%define		snapdate	2010-06-27
 %define		svn		-ver-svn-06
 
 Summary:	EFL wrapper for DBus
@@ -13,7 +12,7 @@ Version:	0.5.0.49898
 Release:	0.1
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/%{snapdate}/%{name}-%{version}.tar.bz2
+Source0:	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
 # Source0-md5:	b94d01cc67028d9b6709dc37b222c436
 URL:		http://enlightenment.org/p.php?p=about/efl
 BuildRequires:	autoconf >= 2.52
