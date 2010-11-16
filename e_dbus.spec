@@ -2,18 +2,19 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define		ecore_ver	0.9.9.49898
-%define		svn		-ver-svn-06
+%define		ecore_ver	1.0.0
+%define		svn		%{nil}
 
 Summary:	EFL wrapper for DBus
 Summary(pl.UTF-8):	Obudowanie EFL dla systemu DBus
 Name:		e_dbus
-Version:	0.5.0.49898
-Release:	0.1
+%define	subver	beta2
+Version:	1.0.0
+Release:	0.%{subver}.1
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
-# Source0-md5:	b94d01cc67028d9b6709dc37b222c436
+Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.%{subver}.tar.bz2
+# Source0-md5:	98c45ac347b3bfb5b7a33cd972006226
 URL:		http://enlightenment.org/p.php?p=about/efl
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -57,7 +58,7 @@ Static e_dbus library.
 Statyczna biblioteka e_dbus.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}.%{subver}
 
 %build
 %{__libtoolize}
@@ -93,20 +94,20 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/e_dbus_test
 %attr(755,root,root) %{_bindir}/e_dbus_test_client
 %attr(755,root,root) %{_bindir}/e_dbus_ukit_test
-%attr(755,root,root) %{_libdir}/libebluez%{svn}.so.0.5.0
-%attr(755,root,root) %ghost %{_libdir}/libebluez%{svn}.so.0
-%attr(755,root,root) %{_libdir}/libeconnman%{svn}.so.0.5.0
-%attr(755,root,root) %ghost %{_libdir}/libeconnman%{svn}.so.0
-%attr(755,root,root) %{_libdir}/libedbus%{svn}.so.0.5.0
-%attr(755,root,root) %ghost %{_libdir}/libedbus%{svn}.so.0
-%attr(755,root,root) %{_libdir}/libehal%{svn}.so.0.5.0
-%attr(755,root,root) %ghost %{_libdir}/libehal%{svn}.so.0
-%attr(755,root,root) %{_libdir}/libenotify%{svn}.so.0.5.0
-%attr(755,root,root) %ghost %{_libdir}/libenotify%{svn}.so.0
-%attr(755,root,root) %{_libdir}/libeofono%{svn}.so.0.5.0
-%attr(755,root,root) %ghost %{_libdir}/libeofono%{svn}.so.0
-%attr(755,root,root) %{_libdir}/libeukit%{svn}.so.0.5.0
-%attr(755,root,root) %ghost %{_libdir}/libeukit%{svn}.so.0
+%attr(755,root,root) %{_libdir}/libebluez%{svn}.so.1.0.0
+%attr(755,root,root) %ghost %{_libdir}/libebluez%{svn}.so.1
+%attr(755,root,root) %{_libdir}/libeconnman%{svn}.so.1.0.0
+%attr(755,root,root) %ghost %{_libdir}/libeconnman%{svn}.so.1
+%attr(755,root,root) %{_libdir}/libedbus%{svn}.so.1.0.0
+%attr(755,root,root) %ghost %{_libdir}/libedbus%{svn}.so.1
+%attr(755,root,root) %{_libdir}/libehal%{svn}.so.1.0.0
+%attr(755,root,root) %ghost %{_libdir}/libehal%{svn}.so.1
+%attr(755,root,root) %{_libdir}/libenotify%{svn}.so.1.0.0
+%attr(755,root,root) %ghost %{_libdir}/libenotify%{svn}.so.1
+%attr(755,root,root) %{_libdir}/libeofono%{svn}.so.1.0.0
+%attr(755,root,root) %ghost %{_libdir}/libeofono%{svn}.so.1
+%attr(755,root,root) %{_libdir}/libeukit%{svn}.so.1.0.0
+%attr(755,root,root) %ghost %{_libdir}/libeukit%{svn}.so.1
 
 %files devel
 %defattr(644,root,root,755)
@@ -126,15 +127,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libeukit.la
 #%{_libdir}/libenm.la
 %{_libdir}/libenotify.la
-%{_includedir}/E_Bluez.h
-%{_includedir}/E_Connman.h
-%{_includedir}/E_DBus.h
-%{_includedir}/E_Hal.h
-#%{_includedir}/E_Nm.h
-%{_includedir}/E_Notification_Daemon.h
-%{_includedir}/E_Notify.h
-%{_includedir}/E_Ofono.h
-%{_includedir}/E_Ukit.h
+%dir %{_includedir}/e_dbus-1
+%{_includedir}/e_dbus-1/*.h
 %{_pkgconfigdir}/ebluez.pc
 %{_pkgconfigdir}/econnman.pc
 %{_pkgconfigdir}/edbus.pc
