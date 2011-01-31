@@ -8,13 +8,12 @@
 Summary:	EFL wrapper for DBus
 Summary(pl.UTF-8):	Obudowanie EFL dla systemu DBus
 Name:		e_dbus
-%define	subver	beta3
 Version:	1.0.0
-Release:	0.%{subver}.1
+Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.%{subver}.tar.bz2
-# Source0-md5:	db71600a48b7cd96bebe4eb29b0004aa
+Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
+# Source0-md5:	a5c3e2fbbd1dd16da76d50e649e5f3e7
 URL:		http://enlightenment.org/p.php?p=about/efl
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -65,7 +64,7 @@ Static e_dbus library.
 Statyczna biblioteka e_dbus.
 
 %prep
-%setup -q -n %{name}-%{version}.%{subver}
+%setup -q
 
 %build
 %{__libtoolize}
