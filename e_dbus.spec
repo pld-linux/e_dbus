@@ -21,7 +21,7 @@ BuildRequires:	dbus-devel >= 0.62
 BuildRequires:	ecore-devel >= %{ecore_ver}
 BuildRequires:	evas-devel >= %{ecore_ver}
 BuildRequires:	libtool
-BuildRequires:	pkgconfig
+BuildRequires:	pkgconfig >= 1:0.22
 Requires:	dbus-libs >= 0.62
 Requires:	ecore-devel >= %{ecore_ver}
 Requires:	evas >= %{evas_ver}
@@ -91,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING README
+%doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_bindir}/e-notify-send
 %attr(755,root,root) %{_bindir}/e_dbus_bluez_test
 %attr(755,root,root) %{_bindir}/e_dbus_connman_test
