@@ -14,7 +14,7 @@ License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
 # Source0-md5:	a5c3e2fbbd1dd16da76d50e649e5f3e7
-URL:		http://enlightenment.org/p.php?p=about/efl
+URL:		http://trac.enlightenment.org/e/wiki/E_Dbus
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
 BuildRequires:	dbus-devel >= 0.62
