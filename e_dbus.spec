@@ -9,7 +9,7 @@ Summary:	EFL wrapper for DBus
 Summary(pl.UTF-8):	Obudowanie EFL dla systemu DBus
 Name:		e_dbus
 Version:	1.0.0
-Release:	3
+Release:	4
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
@@ -23,7 +23,7 @@ BuildRequires:	evas-devel >= %{ecore_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
 Requires:	dbus-libs >= 0.62
-Requires:	ecore-devel >= %{ecore_ver}
+Requires:	ecore >= %{ecore_ver}
 Requires:	evas >= %{evas_ver}
 Obsoletes:	ecore-dbus
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
