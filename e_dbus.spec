@@ -8,12 +8,12 @@
 Summary:	EFL wrapper for DBus
 Summary(pl.UTF-8):	Obudowanie EFL dla systemu DBus
 Name:		e_dbus
-Version:	1.0.0
-Release:	4
+Version:	1.0.1
+Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	a5c3e2fbbd1dd16da76d50e649e5f3e7
+# Source0-md5:	2023e8d8ed2d7cc0c9cf860b8091ff41
 URL:		http://trac.enlightenment.org/e/wiki/E_Dbus
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -101,19 +101,19 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/e_dbus_test
 %attr(755,root,root) %{_bindir}/e_dbus_test_client
 %attr(755,root,root) %{_bindir}/e_dbus_ukit_test
-%attr(755,root,root) %{_libdir}/libebluez.so.1.0.0
+%attr(755,root,root) %{_libdir}/libebluez.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libebluez.so.1
-%attr(755,root,root) %{_libdir}/libeconnman.so.1.0.0
+%attr(755,root,root) %{_libdir}/libeconnman.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libeconnman.so.1
-%attr(755,root,root) %{_libdir}/libedbus.so.1.0.0
+%attr(755,root,root) %{_libdir}/libedbus.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libedbus.so.1
-%attr(755,root,root) %{_libdir}/libehal.so.1.0.0
+%attr(755,root,root) %{_libdir}/libehal.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libehal.so.1
-%attr(755,root,root) %{_libdir}/libenotify.so.1.0.0
+%attr(755,root,root) %{_libdir}/libenotify.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libenotify.so.1
-%attr(755,root,root) %{_libdir}/libeofono.so.1.0.0
+%attr(755,root,root) %{_libdir}/libeofono.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libeofono.so.1
-%attr(755,root,root) %{_libdir}/libeukit.so.1.0.0
+%attr(755,root,root) %{_libdir}/libeukit.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libeukit.so.1
 
 %files devel
