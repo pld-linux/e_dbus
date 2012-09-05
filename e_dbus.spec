@@ -2,19 +2,19 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define		ecore_ver	1.2.0
-%define		eina_ver	1.2.0
-%define		evas_ver	1.2.0
+%define		ecore_ver	1.7.0
+%define		eina_ver	1.7.0
+%define		evas_ver	1.7.0
 
 Summary:	EFL wrapper for DBus
 Summary(pl.UTF-8):	Obudowanie EFL dla systemu DBus
 Name:		e_dbus
-Version:	1.2.0
+Version:	1.7.0
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	a282a2c98e2999e72b26e8e8f4e9e9d6
+# Source0-md5:	7d0f350ebd5f5d913b29c67a7a275abd
 URL:		http://trac.enlightenment.org/e/wiki/E_Dbus
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -97,6 +97,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/e-notify-send
+%attr(755,root,root) %{_bindir}/e_dbus_async_client_test
+%attr(755,root,root) %{_bindir}/e_dbus_async_server_test
 %attr(755,root,root) %{_bindir}/e_dbus_bluez_test
 %attr(755,root,root) %{_bindir}/e_dbus_connman0_7x_test
 %attr(755,root,root) %{_bindir}/e_dbus_notification_daemon
