@@ -20,12 +20,14 @@ BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
 BuildRequires:	dbus-devel >= 0.62
 BuildRequires:	ecore-devel >= %{ecore_ver}
+BuildRequires:	ecore-evas-devel >= %{ecore_ver}
 BuildRequires:	eina-devel >= %{eina_ver}
 BuildRequires:	evas-devel >= %{ecore_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
 Requires:	dbus-libs >= 0.62
 Requires:	ecore >= %{ecore_ver}
+Requires:	ecore-evas >= %{ecore_ver}
 Requires:	eina >= %{eina_ver}
 Requires:	evas >= %{evas_ver}
 Obsoletes:	ecore-dbus
