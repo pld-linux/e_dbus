@@ -2,19 +2,19 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define		ecore_ver	1.7.5
-%define		eina_ver	1.7.5
-%define		evas_ver	1.7.5
+%define		ecore_ver	1.7.6
+%define		eina_ver	1.7.6
+%define		evas_ver	1.7.6
 
 Summary:	EFL wrapper for DBus
 Summary(pl.UTF-8):	Obudowanie EFL dla systemu DBus
 Name:		e_dbus
-Version:	1.7.5
+Version:	1.7.6
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	a197ae1c8e93debf20728e3e7693b868
+# Source0-md5:	4f481b1a341fab2e8a06ce6fd050aec5
 URL:		http://trac.enlightenment.org/e/wiki/E_Dbus
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
