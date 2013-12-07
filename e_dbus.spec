@@ -1,3 +1,4 @@
+# NOTE: deprecated package, EFL 1.7.x specific; EFL 1.8 uses new eldbus APIs instead
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
@@ -10,7 +11,7 @@ Summary:	EFL wrapper for DBus
 Summary(pl.UTF-8):	Obudowanie EFL dla systemu DBus
 Name:		e_dbus
 Version:	1.7.9
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
@@ -89,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/lib*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -134,13 +138,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libenotify.so
 %attr(755,root,root) %{_libdir}/libeofono.so
 %attr(755,root,root) %{_libdir}/libeukit.so
-%{_libdir}/libebluez.la
-%{_libdir}/libeconnman0_7x.la
-%{_libdir}/libedbus.la
-%{_libdir}/libehal.la
-%{_libdir}/libeofono.la
-%{_libdir}/libeukit.la
-%{_libdir}/libenotify.la
 %{_includedir}/e_dbus-1
 %{_pkgconfigdir}/ebluez.pc
 %{_pkgconfigdir}/econnman-0.7x.pc
